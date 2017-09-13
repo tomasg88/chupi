@@ -1,0 +1,14 @@
+<div class="top-menu" ng-class="{ 'open': open, 'compact': !open }" ng-controller="topMenuController" ng-click="open = !open">
+  <div class="" ng-if="!open">
+    <p>MENU</p>
+  </div>
+  <div class="" ng-if="open">
+    <p ng-click="redirectTo('concepto')">CONCEPTO</p>
+    <p>|</p>
+    <p ng-click="redirectTo('cumple')">CUMPLEAÑOS</p>
+    <p>|</p>
+    <p ng-click="redirectTo('barra-movil')">BARRA MÓVIL</p>
+    <p>|</p>
+    <p ng-click="redirectTo('contacto')">CONTACTO</p>
+  </div>
+</div>

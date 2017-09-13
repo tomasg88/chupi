@@ -23,8 +23,10 @@ var seq = require('run-sequence');
 var GLOBS 				= {};
 GLOBS.fonts 			= 'src/fonts/*';
 GLOBS.icons 			= 'src/fonts/icons/*.svg';
-GLOBS.libs 				= ['src/libs/*', 'src/libs/**/*'];
-GLOBS.images			= 'src/img/*';
+GLOBS.js 					= 'src/js/**/*';
+GLOBS.partials		= 'src/partials/**/*';
+GLOBS.libs 				= 'src/libs/**/*';
+GLOBS.images			= 'src/img/**/*';
 GLOBS.less 				= 'src/less/chupi.less';
 
 GLOBS.html 				= ['src/index.html', 'src/sample.html'];
@@ -63,8 +65,18 @@ gulp.task('copy:html', function() {
 	.pipe(gulp.dest('dist'));
 });
 
+gulp.task('copy:partials', function() {
+	return gulp.src(GLOBS.partials)
+	.pipe(gulp.dest(path.join('dist', 'partials')));
+});
+
+gulp.task('copy:libs', function() {
+	return gulp.src(GLOBS.libs)
+	.pipe(gulp.dest(path.join('dist', 'libs')));
+});
+
 gulp.task('copy', function(done) {
-	seq('copy:images', 'copy:html', done);
+	seq('copy:images', 'copy:html', 'copy:partials', 'copy:libs', done);
 });
 
 //=======================================================================
@@ -95,7 +107,7 @@ gulp.task('css', function(done) {
 gulp.task('icons', function() {
 	return gulp.src(GLOBS.icons)
 		.pipe(fontIcon({
-			fontName: 'smart-icon-font',
+			fontName: 'icons',
 			fontAlias: 'icon',
 			normalize: true,
 			fontHeight: 1001 }))
@@ -114,12 +126,12 @@ gulp.task('icons', function() {
 //=======================================================================
 // Uglify and minify JS
 //=======================================================================
-// gulp.task('js', function() {
-// 	return gulp.src(GLOBS.js)
-// 		.pipe(concat('smart.min.js'))
-// 		.pipe(uglify())
-// 		.pipe(gulp.dest(path.join('dist', 'js')));
-// });
+gulp.task('js', function() {
+	return gulp.src(GLOBS.js)
+		.pipe(concat('chupi.min.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest(path.join('dist', 'js')));
+});
 
 //=======================================================================
 // Serve app
@@ -143,7 +155,7 @@ gulp.task('watch', function() {
 // Sequences
 //=======================================================================
 gulp.task('build', function(done) {
-	seq('clean', 'copy', 'css', done);
+	seq('clean', 'copy', 'css', 'icons', 'js', done);
 });
 
 gulp.task('default', function(done) {

@@ -21,7 +21,7 @@ var seq = require('run-sequence');
 // Globs
 //=======================================================================
 var GLOBS 				= {};
-GLOBS.fonts 			= 'src/fonts/*';
+GLOBS.fonts 			= 'src/fonts/**/*';
 GLOBS.icons 			= 'src/fonts/icons/*.svg';
 GLOBS.js 					= 'src/js/**/*';
 GLOBS.partials		= 'src/partials/**/*';
@@ -50,10 +50,10 @@ gulp.task('clean', function(done) {
 //=======================================================================
 // Copy
 //=======================================================================
-// gulp.task('copy:fonts', function() {
-// 	return gulp.src(GLOBS.fonts)
-// 	.pipe(gulp.dest(path.join('dist', 'fonts')));
-// });
+gulp.task('copy:fonts', function() {
+	return gulp.src(GLOBS.fonts)
+	.pipe(gulp.dest(path.join('dist', 'fonts')));
+});
 
 gulp.task('copy:images', function() {
 	return gulp.src(GLOBS.images)
@@ -76,7 +76,7 @@ gulp.task('copy:libs', function() {
 });
 
 gulp.task('copy', function(done) {
-	seq('copy:images', 'copy:html', 'copy:partials', 'copy:libs', done);
+	seq('copy:fonts', 'copy:images', 'copy:html', 'copy:partials', 'copy:libs', done);
 });
 
 //=======================================================================

@@ -1,13 +1,31 @@
-.shops-menu {
-  position: absolute;
-  height: 250px;
-  top: -170px; 
-}
+.shops-container {
+  position: fixed;
+  bottom: 0;
 
-.shop-option{
-  height: 250px;
+  .shops-button > img:hover{
+    transform: scale(1.1);
+  }
 
-  > img {
-    width: 90%;
+  .shops-background {
+    position: absolute;
+    bottom: 0;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100px;
+  }
+
+  .shops-menu {
+
+    &.open {
+      display: block;
+    }
+  }
+
+  .shop-option{
+    height: 250px;
+
+    > img {
+      width: 90%;
+    }
   }
 }

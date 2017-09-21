@@ -15,27 +15,27 @@ angular.module('chupi').controller('shopController',
     function init() {
       $scope.shops = {
         castelar: {
-          back: 'img/contenedores/Castelar.png',
+          back: 'castelar',
           info: 'img/info/Info-castelar.png'
         },
         lomas: {
-          back: 'img/contenedores/Lomas-de-Zamora.png',
+          back: 'lomas',
           info: 'img/info/Info-lomas.png'
         },
         palermoHollywood: {
-          back: 'img/contenedores/Palermo-hollywood.png',
+          back: 'palermo-hollywood',
           info: 'img/info/Info-palermohollywood.png'
         },
         palermoSoho: {
-          back: 'img/contenedores/Palermo-soho.png',
+          back: 'palermo-soho',
           info: 'img/info/Info-palermosoho.png'
         },
         punta: {
-          back: 'img/contenedores/Punta-del-este.png',
+          back: 'punta',
           info: 'img/info/Info-punta.png'
         },
         sanTelmo: {
-          back: 'img/contenedores/San-telmo.png',
+          back: 'san-telmo',
           info: 'img/info/Info-santelmo.png'
         }
       };

@@ -9,14 +9,11 @@
 .row.no-gutters > [class*=" col-"] {
   padding-right: 0;
   padding-left: 0;
-
 }
-
 .no-margin {
   margin-top: 0;
   margin-bottom: 0;
 }
-
 
 //  Styles
 // ------------------------
@@ -27,28 +24,57 @@ body {
 
 .back-image {
   background-size: cover;
-  padding-bottom: 325px;
+  padding-top: 6% 10% 6% 10%;
+
   &.shop {
-    padding-bottom: 135px;
+    // padding-bottom: 135px;
+    &.castelar {
+      background-image: url('../img/contenedores/Castelar.png');
+    }
+    &.palermo-hollywood {
+      background-image: url('../img/contenedores/Palermo-hollywood.png');
+    }
+    &.palermo-soho {
+      background-image: url('../img/contenedores/Palermo-Soho.png');
+    }
+    &.lomas {
+      background-image: url('../img/contenedores/Lomas-de-zamora.png');
+    }
+    &.san-telmo {
+      background-image: url('../img/contenedores/San-telmo.png');
+    }
+    &.punta {
+      background-image: url('../img/contenedores/Punta-del-este.png');
+    }
+    img {
+      padding-top: 7%;
+      width: 75%;
+    }
   }
 }
 
+.title {
+  font-family: 'CodePro';
+  font-size: 50px;
+}
+
+.main-content {
+  font-family: 'Gotham';
+}
+
+// Contenedores
 .home {
   background-image: url('../img/contenedores/Home.png');
 }
-
 .birthday {
   background-image: url('../img/contenedores/Cumple.png');
 }
-
 .contact {
   background-image: url('../img/contenedores/Contacto.png');
 }
-
 .concept {
   background-image: url('../img/contenedores/Concepto.png');
 }
-
 .barra {
   background-image: url('../img/contenedores/Barra-Movil.png');
 }
@@ -56,9 +82,4 @@ body {
 .home > img {
   width: 70%;
   padding-top: 12%;
-}
-
-.shop > img {
-  padding-top: 7%;
-  width: 75%;
 }

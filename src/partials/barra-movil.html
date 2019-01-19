@@ -1,53 +1,66 @@
-<div class="back-image barra">
+<div class="back-image barra" ng-controller="barraController">
   <div class="row">
-    <div class="col-lg-12 text-center">
-      <h1>BARRA MÓVIL</h1>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+      <h1 class="title">BARRA MÓVIL</h1>
     </div>
   </div>
   <div class="row">
-    <form class="form-horizontal" action="index.html" method="post">
-      <div class="col-lg-6 text-center">
-        <div class="form-group">
-          <label for="name" class="col-lg-3">NOMBRE</label>
-          <div class="col-lg-9">
-            <input type="text" id="name" class="form-control"></input>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+      <!-- <span class="separador"></span> -->
+      <form class="form-horizontal">
+        <input type="hidden" name="subject" value="barraMovil">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="form-group">
+              <label for="name" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 label">NOMBRE</label>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 pull-right">
+                <input type="text" id="name" name="name" class="form-control" ng-model="form.name" required></input>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="phone" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 label">TELÉFONO</label>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 pull-right">
+                <input type="text" id="phone" name="phone" class="form-control" ng-model="form.phone" required></input>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 label">MAIL</label>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 pull-right">
+                <input type="text" id="email" name="email" class="form-control" ng-model="form.email" required></input>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="form-group">
+              <label for="guests" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 label">INVITADOS</label>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 pull-right">
+                <input type="text" id="guests" name="guests" class="form-control" ng-model="form.guests" required></input>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="location" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 label">UBICACION</label>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 pull-right">
+                <input type="text" id="location" name="location" class="form-control" ng-model="form.location" required></input>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="comment" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 label">COMENTARIOS</label>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 pull-right">
+                <textarea type="text" id="comment" name="comment" rows="3" class="form-control" ng-model="form.comment" required></textarea>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="form-group">
-          <label for="phone" class="col-lg-3">TELÉFONO</label>
-          <div class="col-lg-9">
-            <input type="text" id="phone" class="form-control"></input>
+        <div class="row no-gutters">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
+          <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+            <input type="button" ng-click="sendEmail()" class="btn btn-primary" value="ENVIAR"></input>
           </div>
         </div>
-        <div class="form-group">
-          <label for="mail" class="col-lg-3">MAIL</label>
-          <div class="col-lg-9">
-            <input type="text" id="mail" class="form-control"></input>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 text-center">
-        <div class="form-group">
-          <label for="guests" class="col-lg-3">INVITADOS</label>
-          <div class="col-lg-9">
-            <input type="text" id="guests" class="form-control"></input>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="location" class="col-lg-3">UBICACION</label>
-          <div class="col-lg-9">
-            <input type="text" id="location" class="form-control"></input>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="comments" class="col-lg-3">COMENTARIOS</label>
-          <div class="col-lg-9">
-            <input type="text" id="comments" class="form-control"></input>
-          </div>
-        </div>
-      </div>
-
-    </form>
-
+      </form>
+      <!-- <span class="separador"></span> -->
+    </div>
+    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
   </div>
 </div>

@@ -5,8 +5,8 @@ angular.module('chupi', [
   'ngAnimate',
   'ngTouch'
 ])
-.config(['$routeProvider',
-  function($routeProvider) {
+.config(['$routeProvider', '$httpProvider',
+  function($routeProvider, $httpProvider) {
 
     $routeProvider
     .when('/home', {
@@ -19,7 +19,8 @@ angular.module('chupi', [
       templateUrl: 'partials/concept.html'
     })
     .when('/barra-movil', {
-      templateUrl: 'partials/barra-movil.html'
+      templateUrl: 'partials/barra-movil.html',
+      controller: 'barraController'
     })
     .when('/locales/:shopName', {
       templateUrl: 'partials/shop-detail.html',
@@ -27,7 +28,6 @@ angular.module('chupi', [
     })
     .when('/cumple', {
       templateUrl: 'partials/birthday.html',
-      controller: 'birthdayController'
     })
     .when('/contacto', {
       templateUrl: 'partials/contact.html',
@@ -36,6 +36,8 @@ angular.module('chupi', [
     .otherwise({
       redirectTo: '/'
     });
+
+    // $httpProvider.defaults.headers.common['Access-Control-Allow-Headers'] = '*';
 
   }
 ])

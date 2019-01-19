@@ -1,0 +1,98 @@
+.form-horizontal {
+  margin-top: 20px;
+}
+
+.form-control {
+  border: 0px solid @input-border;
+  font-family: 'Gotham';
+  font-size: 14px;
+  letter-spacing: 1.2px;
+  height: 22px;
+}
+
+.control-label,
+.label {
+  font-family: 'Gotham';
+  font-stretch: condensed;
+  font-size: 16px;
+  letter-spacing: 1.2px;
+  text-align: left;
+}
+
+
+.btn {
+  border: 1px solid transparent;
+  border-radius: 0;
+  font-family: 'CodePro';
+  font-size: 20px;
+  letter-spacing: 1.4px;
+  padding: 2px 20px;
+}
+
+a,
+a:focus,
+a:visited,
+a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+// Media queries
+//----------------------
+// XXS queries
+@media (max-width: @screen-xxs-max) {
+  .form-horizontal {
+    position: relative;
+    left: 5%;
+  }
+  .form-control {
+    font-size: 10px;
+    height: 15px;
+    padding: 1px 3px;
+  }
+  .control-label, .label {
+    font-size: 9px;
+  }
+  .btn {
+    font-size: 8px;
+  }
+}
+
+// XS queries
+@media (min-width: @screen-xs) and (max-width: @screen-xs-max) {
+  .form-control {
+    font-size: 15px;
+    height: 20px;
+  }
+  .control-label, .label {
+    font-size: 15px;
+  }
+  .btn {
+    font-size: 15px;
+  }
+}
+// SM queries
+@media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
+  .form-control {
+    font-size: 12px;
+    height: 20px;
+  }
+  .control-label, .label {
+    font-size: 12px;
+  }
+  .btn {
+    font-size: 14px;
+  }
+}
+// MD queries
+@media (min-width: @screen-md) and (max-width: @screen-md-max) {
+  .form-control {
+    font-size: 13px;
+  }
+  .control-label, .label {
+    font-size: 14px;
+  }
+  .btn {
+    font-size: 18px;
+  }
+}

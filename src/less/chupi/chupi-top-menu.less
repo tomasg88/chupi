@@ -1,24 +1,79 @@
 // CSS para menu superior
 //----------------------------------------
-.top-menu {
-  display: inline-block;
-  text-align: center;
+.menu {
+  left: 43%;
+}
+.content {
+  left: 14%;
+  display: inline-flex;
+}
+
+.menu,
+.content {
+  position: absolute;
   background-color: #EA2227;
-  padding: 1% 10%;
-  cursor: pointer;
+  padding: 1.5% 4%;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  z-index: 5;
+  cursor: pointer;
+  z-index: 1;
+  p {
+    display: inline;
+    font-family: 'Festivo';
+    letter-spacing: 2px;
+    font-size: 16px;
+    margin-bottom: 0;
+    &.split {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
 }
 
-.top-menu p {
-  display: inline;
-}
 
-.top-menu.open {
-  -moz-transition: height .5s;
-  -ms-transition: height .5s;
-  -o-transition: height .5s;
-  -webkit-transition: height .5s;
-  transition: height .5s;
+// Media queries
+//---------------------------------
+// XXS queries
+@media (max-width: @screen-xxs-max) and (orientation: portrait) {
+  .content {
+    left: 10%;
+  }
+  .menu, .content {
+    p {
+      font-size: 9px;
+    }
+  }
+}
+// XS queries
+@media (min-width: @screen-xs) and (max-width: @screen-xs-max) {
+  .content {
+    left: 15%;
+  }
+  .menu, .content {
+    p {
+      font-size: 15px;
+    }
+  }
+}
+// SM queries
+@media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
+  .content {
+    left: 6%;
+  }
+  .menu, .content {
+    p {
+      font-size: 11px;
+    }
+  }
+}
+// MD queries
+@media (min-width: @screen-md) and (max-width: @screen-md-max) {
+  .content {
+    left: 10%;
+  }
+  .menu, .content {
+    p {
+      font-size: 14px;
+    }
+  }
 }

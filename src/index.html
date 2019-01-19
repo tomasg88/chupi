@@ -9,8 +9,13 @@
 
     <!-- StyleSheet libraries  -->
 		<link rel="stylesheet" type="text/css" href="css/chupi.min.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon-01.png"/>
 
     <title>Chupitos</title>
+
+    <!-- JQuery libs -->
+    <script src="libs/jquery/jquery-3.2.1.min.js"></script>
+    <script src="libs/jquery/jquery.transit.min.js"></script>
 
     <!-- JavaScript libraries -->
     <script type="text/javascript" src="libs/angular/angular.min.js"></script>
@@ -26,36 +31,36 @@
     <div class="container">
       <!-- Menu superior -->
       <div class="row">
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
         </div>
-        <div class="col-lg-6 text-center">
-          <div ng-include="'/partials/menus/top-menu.html'"></div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center">
+          <div top-menu></div>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
         </div>
       </div>
 
       <!-- Contenido central -->
       <div class="row">
-        <div class="col-lg-2">
+        <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
         </div>
-        <div class="col-lg-8 text-center">
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 text-center">
           <div class="content-container">
             <div ng-view></div>
           </div>
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
         </div>
       </div>
 
       <!-- Menu inferior - locales -->
       <div class="row">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-10 text-center">
-          <div ng-include="'/partials/menus/shops-menu.html'">
+        <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs"></div>
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 text-center">
+          <div ng-include="'./partials/menus/shops-menu.html'">
           </div>
         </div>
-        <div class="col-lg-1"></div>
+        <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs"></div>
       </div>
 
     </div> <!-- Close .container -->

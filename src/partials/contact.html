@@ -1,4 +1,65 @@
-<div class="back-image contact">
-  <h1>Contacto</h1>
-  <h3>Formulario de contacto "comun"</h3>
+<div class="back-image contact" ng-controller="contactController">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+      <h1 class="title">CONTACTO</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+      <!-- <span class="separador"></span> -->
+      <form class="form-horizontal" action="http://localhost/mail.php" method="post">
+        <input type="hidden" name="subject" value="contacto">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center">
+            <div class="form-group">
+              <label for="name" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 label">NOMBRE</label>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 pull-right">
+                <input type="text" id="name" class="form-control" name="name" ng-model="form.name" required></input>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="phone" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 label">TELÉFONO</label>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 pull-right">
+                <input type="text" id="phone" class="form-control" name="phone" ng-model="form.phone" required></input>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="mail" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 label">MAIL</label>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 pull-right">
+                <input type="text" id="mail" class="form-control" name="email" ng-model="form.email" required></input>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center">
+            <div class="form-group">
+              <label for="question" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 label">CONSULTA</label>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 pull-right">
+                <input type="text" id="question" class="form-control" name="question" ng-model="form.question" required></input>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="birthday" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 label">CUMPLEAÑOS</label>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 pull-right">
+                <input type="text" id="birthday" class="form-control" name="birthday" ng-model="form.birthday" required></input>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="comments" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 label">COMENTARIOS</label>
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 pull-right">
+                <textarea type="text" id="comments" rows="3" class="form-control" name="comment" ng-model="form.comment" required></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            <input type="button" ng-click="sendEmail()" class="btn btn-primary" value="ENVIAR"></input>
+          </div>
+        </div>
+      </form>
+      <!-- <span class="separador"></span> -->
+    </div>
+  </div>
 </div>

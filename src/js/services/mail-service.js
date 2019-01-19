@@ -1,26 +1,49 @@
 /**
  * @ngdoc overview
- * @name chupi.Mail
+ * @name chupi.Form
  * @description
  *
- * Hace POST a servicio de mail para funcionalidades de Contacto y Cumpleaños
+ * description
  */
 
 'use strict';
 
-angular.module('chupi').factory('Mail',
-['$http',
-  function ($http) {
+angular.module('chupi').factory('Email',
+['$http', '$q',
+  function ($http, $q) {
 
-    var Mail = {};
+    var Email = {};
 
-    Mail.contact = function(data) {
+    Email.sendEmail = function(body) {
+      var promise = $q.defer();
+      // var url="http://www.barchupitos.com/contacto.php";
+      var request = {
+        method: "POST",
+        url: "../mail.php",
+        headers: {
+          "Content-Type": 'application/x-www-form-urlencoded',
+        },
+        dataType: "json", // Add datatype
+        data: body
+      };
+      // var payload = new FormData();
 
+      $http(request).then(
+        function success(data) {
+          console.log('Correo enviado!');
+          console.log('Data:', data);
+          promise.resolve(data);
+        },
+        function error(data, data2, data3, data4) {
+          console.log('Error al enviar: ', data);
+          promise.reject();
+        }
+      );
+
+      return promise.promise;
     }
 
-    Mail.sendBirthday = function(data) {
-
-    }
+    return Email;
 
   }
 ]);

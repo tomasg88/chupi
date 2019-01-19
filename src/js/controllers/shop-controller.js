@@ -14,10 +14,6 @@ angular.module('chupi').controller('shopController',
     /* PRIVATE FUNCTIONS */
     function init() {
       $scope.shops = {
-        castelar: {
-          back: 'img/contenedores/Castelar.png',
-          info: 'img/info/Info-castelar.png'
-        },
         lomas: {
           back: 'img/contenedores/Lomas-de-Zamora.png',
           info: 'img/info/Info-lomas.png'

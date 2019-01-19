@@ -1,0 +1,7 @@
+.gitignore
+node_modules
+ChupitosDoc
+Chupitos Web/
+Chupitos Web.zip
+*.ai
+dist

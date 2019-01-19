@@ -15,7 +15,7 @@ angular.module('chupi').controller('shopController',
     function init() {
       $scope.shops = {
         lomas: {
-          back: 'img/contenedores/Lomas-de-Zamora.png',
+          back: 'img/contenedores/Lomas-de-zamora.png',
           info: 'img/info/Info-lomas.png'
         },
         palermoHollywood: {

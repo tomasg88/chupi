@@ -1,44 +1,40 @@
 /**
- * @ngdoc overview
- * @name chupi.shopController
- * @description description
- *
- */
+* @ngdoc overview
+* @name chupi.shopController
+* @description description
+*
+*/
 
 'use strict';
 
 angular.module('chupi').controller('shopController',
 ['$scope', '$routeParams',
-  function($scope, $routeParams) {
+function($scope, $routeParams) {
 
     /* PRIVATE FUNCTIONS */
     function init() {
-      $scope.shops = {
-        lomas: {
-          back: 'img/contenedores/Lomas-de-zamora.png',
-          info: 'img/info/Info-lomas.png'
-        },
-        palermoHollywood: {
-          back: 'img/contenedores/Palermo-hollywood.png',
-          info: 'img/info/Info-palermohollywood.png'
-        },
-        palermoSoho: {
-          back: 'img/contenedores/Palermo-soho.png',
-          info: 'img/info/Info-palermosoho.png'
-        },
-        punta: {
-          back: 'img/contenedores/Punta-del-este.png',
-          info: 'img/info/Info-punta.png'
-        },
-        sanTelmo: {
-          back: 'img/contenedores/San-telmo.png',
-          info: 'img/info/Info-santelmo.png'
-        }
-      };
+        $scope.shops = {
+            lomas: {
+                back: 'img/contenedores/Lomas-de-zamora.png',
+                info: 'img/info/Info-lomas.png'
+            },
+            palermo: {
+                back: 'img/contenedores/Palermo.png',
+                info: 'img/info/Info-palermo.png'
+            },
+            laplata: {
+                back: 'img/contenedores/La-plata.png',
+                info: 'img/info/Info-laplata.png'
+            },
+            sanTelmo: {
+                back: 'img/contenedores/San-telmo.png',
+                info: 'img/info/Info-santelmo.png'
+            }
+        };
 
-      $scope.active = $scope.shops[$routeParams.shopName];
+        $scope.active = $scope.shops[$routeParams.shopName];
     }
 
     init();
-  }
+}
 ]);

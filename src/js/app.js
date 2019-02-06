@@ -41,7 +41,8 @@ angular.module('chupi', [
 
     }
 ])
-.run(['$rootScope', '$location',
+.run(
+['$rootScope', '$location',
     function($rootScope, $location) {
 
         $rootScope.active = {};
